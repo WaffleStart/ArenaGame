@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArenaGame.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +10,13 @@ namespace ArenaGame.Heroes
     public class Summoner : Hero
     {
         int createdMinions = Random.Shared.Next(10, 31);
-        public Summoner() : this("Dumbledore")
-        {
+   
 
-        }
-        public Summoner(string name) : base(name)
+        public Summoner(Weapon weapon) : base("Dumbledore", weapon)
         {
+            
         }
-
+        
         public override void TakeDamage(int incomingDamage)
         {
             if (ThrowDice(15))

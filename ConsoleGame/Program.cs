@@ -26,12 +26,13 @@ namespace ConsoleGame
 
             for (int i = 0; i < rounds; i++)
             {
-
-                Hero one = new Knight(weapons[Random.Shared.Next(0,4)]);
-                //Hero one = new Rogue("Robih Hood");
-                Hero two = new Avatar("Aang");
-                //Hero two = new Summoner("Dumbledore");
-
+                Weapon firstWep = weapons[Random.Shared.Next(0, 4)];
+                Weapon secondWep = weapons[Random.Shared.Next(0, 4)];
+                Hero one = new Knight(firstWep);
+                //Hero one = new Rogue(firstWep);
+                Hero two = new Avatar(secondWep);
+                //Hero two = new Summoner(secondWep);
+                Console.WriteLine($"{one.Name} with legendary weapon {firstWep.Name} is fighting {two.Name}, who is using the legendary {secondWep.Name}");
                 Console.WriteLine($"Arena fight between: {one.Name} and {two.Name}");
                 Arena arena = new(one, two);
                 Hero winner = arena.Battle();

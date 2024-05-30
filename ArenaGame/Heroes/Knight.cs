@@ -12,7 +12,7 @@ namespace ArenaGame.Heroes
         const int BlockDamageChance = 10;
         private const int ExtraDamageChance = 5;
         Weapon wep;
-        public Knight(Weapon weapon) : base("Sir John")
+        public Knight(Weapon weapon) : base("Sir John", weapon)
         {
             wep = weapon;
         }

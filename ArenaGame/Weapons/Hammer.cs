@@ -10,7 +10,7 @@ namespace ArenaGame.Weapons
     public class Hammer : Weapon
     {
        
-        private int damageOnHit = 25; // currently low dmg cause stun is op.
+        private int damageOnHit = 15; // currently low dmg cause stun is op.
         public Hammer() : base("Mjölnir")
         {
         }

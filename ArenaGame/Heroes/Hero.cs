@@ -24,23 +24,21 @@ namespace ArenaGame.Heroes
 
         public bool IsDead { get { return Health <= 0; } }
 
-        public Weapon Weapon { get; private set; }
+        public virtual Weapon Weapon { get; private set; }
 
         public Hero(string name, Weapon weapon)
         {
             Name = name;
             Health = 500;
             StartingHealth = Health;
+            Weapon = weapon;
            
         }
 
-        public Hero(string v)
-        {
-        }
 
         public virtual int Attack(Hero defender)
         {
-            return Random.Shared.Next(80, 121);
+            return Weapon.Attack(Random.Shared.Next(80, 121),defender);
         }
 
         public virtual void TakeDamage(int incomingDamage)

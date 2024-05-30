@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArenaGame.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,8 @@ namespace ArenaGame.Heroes
         private int chanceToApplyStatus = 90;
         private int chanceToLoseStatus = 15;
 
-        public Avatar() : this("Aang")
-        {
-
-        }
-        public Avatar(string name) : base(name)
+       
+        public Avatar(Weapon weapon) : base("Aang", weapon)
         {
         }
         public Status StatusEffect()

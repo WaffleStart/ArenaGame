@@ -9,7 +9,7 @@ namespace ArenaGame.Weapons
 {
     public class FrostBlade : Weapon
     {
-        int damageOnHit = 3;
+        int damageOnHit = 15;
         public FrostBlade() : base("FrostMourne")
         {
         }
@@ -17,7 +17,7 @@ namespace ArenaGame.Weapons
         public override int Attack(int damage, Hero enemy)
         {
 
-            AttackEffect(Status.Burned, enemy, damageOnHit, damage);
+            AttackEffect(Status.Frozen, enemy, damageOnHit, damage);
             return base.Attack(damage, enemy);
         }
     }

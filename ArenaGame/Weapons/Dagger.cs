@@ -9,7 +9,7 @@ namespace ArenaGame.Weapons
 {
     public class Dagger : Weapon
     {
-        int damageOnHit = 2;
+        int damageOnHit = 20;
         public Dagger() : base("Nightingale's Fang")
         {
         }
@@ -17,7 +17,7 @@ namespace ArenaGame.Weapons
         public override int Attack(int damage, Hero enemy)
         {
 
-            AttackEffect(Status.Burned, enemy, damageOnHit, damage);
+            AttackEffect(Status.Disarmed, enemy, damageOnHit, damage); // Potentially the strongest
             return base.Attack(damage, enemy);
         }
     }

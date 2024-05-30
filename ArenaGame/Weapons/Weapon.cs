@@ -35,7 +35,7 @@ namespace ArenaGame.Weapons
         protected bool ThrowDice(int chance)
         {
             int dice = Random.Shared.Next(101);
-            if (ThrowDice(1))
+            if (dice == 1)
             {
                 CurrentState = State.Broken; // why not
 

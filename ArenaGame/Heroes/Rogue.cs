@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArenaGame.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace ArenaGame.Heroes
         private const int HealEachNthRound = 3;
         private int attackCount;
 
-        public Rogue(string name) : base(name)
+        public Rogue(Weapon weapon) : base("Robih Hood", weapon)
         {
             attackCount = 0;
         }
