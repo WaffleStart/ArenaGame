@@ -32,18 +32,20 @@ namespace ArenaGame.Weapons
 
         public string Name { get; set; }
         protected State CurrentState { get; set; } = State.Flawless;
+        public bool IsBroken { get; private set; } = false;
+
         protected bool ThrowDice(int chance)
         {
             int dice = Random.Shared.Next(101);
             if (dice == 1)
             {
                 CurrentState = State.Broken; // why not
-
+                IsBroken = true;
             }
             return dice <= chance;
         }
 
-        protected void AttackEffect(Status status, Hero enemy, int damageOnHit, int damage)
+        protected void AttackEffect(Status status, Hero enemy,ref int damageOnHit, int damage)
         {
             if (ThrowDice(10))
             {

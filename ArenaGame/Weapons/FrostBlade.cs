@@ -17,7 +17,7 @@ namespace ArenaGame.Weapons
         public override int Attack(int damage, Hero enemy)
         {
 
-            AttackEffect(Status.Frozen, enemy, damageOnHit, damage);
+            AttackEffect(Status.Frozen, enemy, ref damageOnHit, damage);
             return base.Attack(damage, enemy);
         }
     }

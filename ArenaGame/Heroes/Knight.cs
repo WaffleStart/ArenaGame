@@ -35,7 +35,7 @@ namespace ArenaGame.Heroes
         {
             int attack = base.Attack(defender);
             if (ThrowDice(ExtraDamageChance)) attack = attack * 150 / 100;
-            return wep.Attack(attack,defender);
+            return attack;
         }
     }
 }

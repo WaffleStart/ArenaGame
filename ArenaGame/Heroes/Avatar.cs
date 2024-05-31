@@ -10,8 +10,8 @@ namespace ArenaGame.Heroes
     public class Avatar : Hero // Who doesn't love Aang.
     {
         private bool hasAlreadyBeenDisarmed = false;
-        private int chanceToApplyStatus = 90;
-        private int chanceToLoseStatus = 15;
+        private int chanceToApplyStatus = 45; // balancing classes sucks.
+     
 
        
         public Avatar(Weapon weapon) : base("Aang", weapon)
@@ -19,7 +19,6 @@ namespace ArenaGame.Heroes
         }
         public Status StatusEffect()
         {
-
             if (ThrowDice(25))
             {
                 //Water freezes enemy, skips enemy turn.
@@ -29,7 +28,7 @@ namespace ArenaGame.Heroes
             else if (ThrowDice(50) && !hasAlreadyBeenDisarmed)
             {
                 //Air gets rid of opponents weapon
-
+                hasAlreadyBeenDisarmed = true;
                 return Status.Disarmed;
 
             }
@@ -60,15 +59,7 @@ namespace ArenaGame.Heroes
             {
                 attack += Random.Shared.Next(0, 301);
             }
-            if (defender.Weapon == null && defender.CurrentStatus == Status.Disarmed)
-            {
-                hasAlreadyBeenDisarmed = true;
-                defender.ChangeStatus(Status.Normal);
-            }
-            if (ThrowDice(chanceToLoseStatus))
-            {
-                defender.ChangeStatus(Status.Normal);
-            }
+           
             return attack;
         }
 

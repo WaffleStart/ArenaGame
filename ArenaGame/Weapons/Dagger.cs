@@ -17,7 +17,7 @@ namespace ArenaGame.Weapons
         public override int Attack(int damage, Hero enemy)
         {
 
-            AttackEffect(Status.Disarmed, enemy, damageOnHit, damage); // Potentially the strongest
+            AttackEffect(Status.Disarmed, enemy, ref damageOnHit, damage); // Potentially the strongest
             return base.Attack(damage, enemy);
         }
     }
