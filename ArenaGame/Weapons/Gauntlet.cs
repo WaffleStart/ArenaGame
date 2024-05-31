@@ -17,7 +17,7 @@ namespace ArenaGame.Weapons
 
         public override int Attack(int damage, Hero enemy)
         {
-            Console.WriteLine("Gauntlet attack RAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+            
             AttackEffect(Status.Burned, enemy, ref damageOnHit, damage);
             return base.Attack(damage, enemy);
         }
